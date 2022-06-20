@@ -2,7 +2,7 @@ package capitulo3;
 
 public/*modificador de acesso*/ class /*Palavra reservada para criação de classe*/ Account/*Nome da classe*/ { //declaração da classe
     private String nome; //variável de instância
-    private double saldo = 200;
+    private double saldo;
     
     public Account/*O nome do construtor é o nome da classe*/(String nome, double saldo){
         this.nome = nome;//Atribui à variavel de instancia a variavel local.
