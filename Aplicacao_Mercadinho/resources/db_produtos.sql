@@ -37,7 +37,7 @@ CREATE TABLE `produtos` (
 
 LOCK TABLES `produtos` WRITE;
 /*!40000 ALTER TABLE `produtos` DISABLE KEYS */;
-INSERT INTO `produtos` VALUES (15,'Presunto','16.0','Frios'),(19,'Pao','5.0','Alimento'),(444,'asdsada','11.0','Bebida');
+INSERT INTO `produtos` VALUES (15,'Presunto','16.0','Frios'),(19,'Pao','5.0','Alimento'),(25,'Refrigerante','5.0','Bebida');
 /*!40000 ALTER TABLE `produtos` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
