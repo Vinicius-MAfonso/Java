@@ -1,14 +1,8 @@
-
-
-
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
-
 /**
- *
- * @author ackley.will
+ * Projeto Mercadinho 3º Semestre de Engenharia de Computação
+ * Autores:
+ * Vinicius Mariano Afonso - 
+ * Igor Marinho Ferreira - 061732
  */
 public class FramePrincipalMercadinho extends javax.swing.JFrame {
 

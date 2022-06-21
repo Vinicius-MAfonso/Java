@@ -13,7 +13,6 @@ public class dbConnector {
         try {
             Class.forName(driver);
             con = DriverManager.getConnection(url, user, password);
-            
             System.out.println("Conexão Realizada!");
             return con;
         } catch (Exception e) {

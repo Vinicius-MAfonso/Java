@@ -1,3 +1,9 @@
+/**
+ * Projeto Mercadinho 3º Semestre de Engenharia de Computação
+ * Autores:
+ * Vinicius Mariano Afonso - 061732
+ * Igor Marinho Ferreira - 061732
+ */
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
