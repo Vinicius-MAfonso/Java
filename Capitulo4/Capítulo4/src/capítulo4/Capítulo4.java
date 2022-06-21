@@ -1,22 +1,29 @@
 package capítulo4;
-
+import java.util.Scanner;
 
 public class Capítulo4 {
 
     
     public static void main(String[] args) {
-    int studentGrade = 90;
-        if(studentGrade >= 90){
-            System.out.println("A");
-        }else if(studentGrade >= 80){
-            System.out.println("B");
-        }else if(studentGrade >= 70){
-            System.out.println("C");
-        }else if(studentGrade >= 60){
-            System.out.println("D");
-        }else{
-            System.out.println("F");
-        }
+        
+      Scanner input = new Scanner(System.in);
+      
+      int count = 0;
+      int total = 0;
+      int ultimaNota = 0;
+      while(count <=10){
+          System.out.printf("Digite a %dª nota: ",count);
+          ultimaNota = input.nextInt();
+          total += ultimaNota;
+          count++;
+      }
+      
+      double media = total/count;
+      Student estudante = new Student("Vinicius",media);
+      System.out.printf("A nota em forma de letra do aluno %s é '%c'%n", estudante.getName(), estudante.getLetterGrade());
+//    count++ / count--;
+//    System.out.println(studentGrade>=60 ? "Passou":"Falhou"); //Expressão ternária
+    
     }
     
 }
