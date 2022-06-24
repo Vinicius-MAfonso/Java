@@ -18,9 +18,10 @@ public class Capítulo4 {
           count++;
       }
       
-      double media = total/count;
+      int media = total/count;
       Student estudante = new Student("Vinicius",media);
-      System.out.printf("A nota em forma de letra do aluno %s é '%c'%n", estudante.getName(), estudante.getLetterGrade());
+      System.out.printf("A nota (%d) em forma de letra do aluno %s é '%c'%n", 
+              media,estudante.getName(), estudante.getLetterGrade());
 //    count++ / count--;
 //    System.out.println(studentGrade>=60 ? "Passou":"Falhou"); //Expressão ternária
     

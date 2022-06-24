@@ -3,8 +3,8 @@ package capítulo4;
 
 public class Student {
     private String name;
-    private double average;
-    public Student(String name, double average){
+    private int average;
+    public Student(String name, int average){
         this.name = name;
         this.average = average;
     }
@@ -21,21 +21,18 @@ public class Student {
         return average;
     }
 
-    public void setAverage(double average) {
+    public void setAverage(int average) {
         this.average = average;
     }
     public char getLetterGrade(){
-        if(average >= 90){
-            return 'A';
-        }else if(average >= 80){
-            return 'B';
-        }else if(average >= 70){
-            return 'C';
-        }else if(average >= 60){
-            return 'D';
-        }else{
-            return 'F';
-        }
+        return switch (average) {
+            case 10 -> 'A';
+            case 9 -> 'B';
+            case 8 -> 'C';
+            case 7 -> 'D';
+            case 6 -> 'E';
+            default -> 'F';
+        };
     }
     
 }
