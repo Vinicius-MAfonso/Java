@@ -17,7 +17,7 @@ public class Student {
         this.name = name;
     }
 
-    public double getAverage() {
+    public int getAverage() {
         return average;
     }
 
