@@ -20,30 +20,30 @@ public class Main {
           
           switch(nProduto){
               case 1 -> {
-                  p1+=nProduto;
+                  p1=quantVendida;
                   p1*=2.98;
               }
               case 2 -> {
-                  p2+=nProduto;
+                  p2+=quantVendida;
                   p2*=4.50;
               }
               case 3 -> {
-                  p3+=nProduto;
+                  p3+=quantVendida;
                   p3*=9.98;
               }
               case 4 -> {
-                  p4+=nProduto;
+                  p4+=quantVendida;
                   p4*=4.49;
               }
               case 5 -> {
-                  p5+=nProduto;
+                  p5+=quantVendida;
                   p5*=6.87;
               }
               default -> System.out.println("Produto não cadastrado!");
           }
           
       }
-      System.out.println("Imprimindo dados:");
+      System.out.println("Imprimindo fatura:");
           System.out.printf("Produto 1: R$%.2f%n",p1);
           System.out.printf("Produto 2: R$%.2f%n",p2);
           System.out.printf("Produto 3: R$%.2f%n",p3);
