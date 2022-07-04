@@ -1,7 +1,5 @@
 package pkg5.pkg33;
-import java.util.Scanner;
 //M = C(1+i)^t
-
 //C = 1Bilhão
 //M = 500 Mi
 //I = 0.04
@@ -10,20 +8,18 @@ public class Main {
 
 
     public static void main(String[] args) {
-      Scanner input = new Scanner(System.in);
-      int usuarios = 1000000000;
-      int montante = 500000000;
+      double usuarios = 1;
+      double montante;
       double taxa = 0.04;
       int tempo = 0;
 
       
-      while(usuarios <= 1500000000){
-          
-        
-      } 
-
-        
-      
+      while(usuarios <= 2){
+        montante = usuarios * taxa;
+        usuarios += montante;
+        tempo++;
+        System.out.printf("%5s %27s%n","Mês","Usuarios");
+        System.out.printf("%5d%25.2f Bi%n",tempo,usuarios);
+      }
     }
-    
 }
