@@ -7,7 +7,10 @@ public class Capitulo6 {
     Scanner input = new Scanner(System.in);
     System.out.println(Math.sqrt(900.00));
     
-        
+    String frase = "Hello";
+    frase += " World!";
+    System.out.println(frase);
     }
+    
     
 }
