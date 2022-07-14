@@ -5,17 +5,16 @@ import java.util.Scanner;
 public class Main {
     public static final SecureRandom RANDOM = new SecureRandom();
     public static final Scanner INPUT = new Scanner(System.in);
-    public enum Status{
-        CORRECT,WRONG;
-    }
+    
     public static void main(String[] args) {
         System.out.println("Teste de multiplicação!");
-        int x,y,answer = -1;.
+        int x,y,answer;      
+        answer = -1;
         
         while(true){
             x = RANDOM.nextInt(10);
             y = RANDOM.nextInt(10);
-            while(isCorrect(x,y,answer)){
+            while(!(isCorrect(x,y,answer))){
                 System.out.printf("%d X %d%n",x,y);
                 System.out.print("Digite o resultado da multiplicação: ");
                 answer = INPUT.nextInt();
@@ -26,8 +25,6 @@ public class Main {
                 }    
             
             }
-            
-            
         }
     }
     public static boolean isCorrect(int x, int y, int result){

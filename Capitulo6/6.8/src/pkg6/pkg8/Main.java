@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class Main {
     public static final Scanner input = new Scanner(System.in);
     public static void main(String[] args) {
-        int horas = 0;
+        int horas;
         
         System.out.println("Estacionamento Java!");
         while(true){
