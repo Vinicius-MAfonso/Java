@@ -11,6 +11,6 @@ public class Card {
     }
     @Override
     public String toString(){
-        return face + " of " + suit;//Método toString que retorna o valor "of" naipe
+        return face + " de " + suit;//Método toString que retorna o valor "of" naipe
     }   
 }

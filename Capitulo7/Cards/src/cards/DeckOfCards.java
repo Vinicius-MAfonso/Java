@@ -23,7 +23,8 @@ public class DeckOfCards {
         currentCard = 0;
         //Preenche o baralho com objetos Card
         for(int count = 0;count < deck.length;count++){
-            deck[count] = new Card(faces[count%13], suits[count / 13]);
+            //Cria um objeto carta para cada posição do vetor até completar(51 posições)
+            deck[count] = new Card(faces[count%13], suits[count / 13]);//
         }
     }
     //Embaralha as cartas com um algoritmo de uma passagem
@@ -35,8 +36,11 @@ public class DeckOfCards {
             //Seleciona um número aleatório entre 0 e 51
             int second = randomNumbers.nextInt(NUMBER_OF_CARDS);
             //Compara a carta atual com a aleatória selecionada
+            //Guarda a primeira carta em uma variavel temporaria
             Card temp = deck[first];
+            //A posição da primeira carta é substituida pela segunda
             deck[first] = deck[second];
+            //E a posição da segunda é trocada pela primeira
             deck[second] = temp; 
         }
     }
