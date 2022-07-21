@@ -2,10 +2,10 @@ package gradebook;
 
 public class GradeBook {
     private String courseName; //Nome do curso
-    private int[] grades; //array das notas
+    private final int[][] grades; //array bidimensional das notas dos alunos
     
     
-    public GradeBook(String courseName, int[] grades){
+    public GradeBook(String courseName, int[][] grades){
         this.courseName = courseName;
         this.grades = grades;
     }
@@ -18,20 +18,10 @@ public class GradeBook {
     public void setCourseName(String courseName) {
         this.courseName = courseName;
     }
-    //Retorna as notas
-    public int[] getGrades() {
-        return grades;
-    }
-    //Configura as notas
-    public void setGrades(int[] grades) {
-        this.grades = grades;
-    }
     //Realiza operações nos dados
     public void processGrades(){
         //Apresenta as notas
         outputGrades();
-        //Apresenta a média
-        System.out.printf("Média da classe é %.2f%n",getAverage());
         //Apresenta o máximo
         System.out.printf("A maior nota da sala é %d%n",getMaximum());
         //Apresenta o mínimo
@@ -40,42 +30,52 @@ public class GradeBook {
         outputBarChart();
     }
     public int getMinimum(){
-        int lowGrade = grades[0];
-        for(int grade : grades){
-            if(grade < lowGrade){
-                lowGrade = grade;
+        int lowGrade = grades[0][0];
+        for(int[] studentGrades : grades){
+            for(int grade : studentGrades){
+                if(grade < lowGrade){
+                    lowGrade = grade;
+                }
             }
         }
         return lowGrade;
     }
     public int getMaximum(){
-        int maxGrade = grades[0];
-        for(int grade : grades){
-            if(grade > maxGrade){
-                maxGrade = grade;
-            }
+        int highGrade = grades[0][0];
+        //Faz um loop pelas linha do array de notas(cada aluno)
+        for(int[] studentGrades : grades){
+            //Faz um loop pelas colunas da linha atual(Cada nota)
+            for(int grade : studentGrades)
+                if(grade > highGrade){
+                    highGrade = grade;
+                }
         }
-        return maxGrade;
+        return highGrade;
     }
-    public double getAverage(){
+    //Faz a média de cada aluno separadamente
+    public double getAverage(int[] setOfGrades){
         double soma = 0;
-        for(int grade : grades){
+        for(int grade : setOfGrades){
             soma += grade;
         }
-        return soma/grades.length;
+        return soma/setOfGrades.length;
     }
     public void outputBarChart(){
         System.out.println("Distribuição das notas: ");
         int[] frequency = new int[11];
-        for(int grade : grades){
-            try{
-                ++frequency[grade/10];
-            }catch(ArrayIndexOutOfBoundsException e){
-                System.out.println(e);
-                System.out.println("Nota errada: "+ grade);
+        
+        for(int[] studentGrades : grades){
+            for(int grade : studentGrades){
+                try{
+                    ++frequency[grade/10];
+                }catch(ArrayIndexOutOfBoundsException e){
+                    System.out.println(e);
+                    System.out.println("Nota errada: "+ grade);
+                }
             }
         }
-        for(int count = 0;count < frequency.length; count++){
+        
+        for(int count = 0;count < frequency.length ; count++){
             if(count == 10){
                 System.out.printf("%5d: ", 100);
             }else{
@@ -88,12 +88,29 @@ public class GradeBook {
         }
     }
     public void outputGrades(){
-        System.out.printf("As notas são: %n%n");
-        for(int student = 0; student < grades.length;student++){
-            System.out.printf("Estudante %2d: %3d%n",student++,grades[student]);
+        System.out.printf("As notas são:%n%n");
+        System.out.print("                  "); // alinha títulos de coluna
+
+        // cria um título de coluna para cada um dos testes
+        for (int test = 0; test < grades[0].length; test++){
+            System.out.printf("%5s%d ","Teste", test + 1);
         }
-    }
-  
-    
-    
+
+        System.out.println("Média"); // título da coluna de média do aluno
+
+        // cria linhas/colunas de texto que representam notas de array
+        for (int student = 0; student < grades.length; student++)
+        {
+            System.out.printf("Estudante %2d", student + 1);
+
+            for (int test : grades[student]){ // gera saída de notas do aluno
+                System.out.printf("%8d", test);
+            }    
+
+            // chama método getAverage para calcular a média do aluno;
+            // passa linha de notas como o argumento para getAverage
+            double average = getAverage(grades[student]);
+            System.out.printf("%9.2f%n", average);
+        }
+    }   
 }
