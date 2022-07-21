@@ -17,7 +17,7 @@ public class ArrayListCollection {
             System.out.printf(" %s", items.get(i));
         }
         //Exibe as cores usando for aprimorada no método display
-        display(items, "%nDisplay list contents with enhanced for statement:");
+        display(items, "%nDisplay list contents with enhanced for statement:"); 
         
         items.add("green");//Adiciona "green" ao fim da lista
         items.add("yellow");//Adiciona "yellow" ao fim da lista
