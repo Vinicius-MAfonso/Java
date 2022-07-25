@@ -1,17 +1,15 @@
-
 package pkg7.pkg14;
 
-/**
- *
- * @author ViniciusAfonso
- */
 public class Main {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
+       System.out.println(product(1,2,5,4,3));
     }
-    
+    private static int product(int...numbers){
+        int result = 1;
+        for(int number : numbers){
+            result *= number;
+        }
+        return result;
+    }
 }
