@@ -1,4 +1,5 @@
 package pkg7.pkg19;
+import java.util.ArrayList;
 import java.util.Scanner;
 /*Sistema para atribuir assentos em cada voo da companhia aérea
 Máximo de 10 assentos
@@ -19,32 +20,73 @@ Se uma das classses estiver cheia somente a outra deve ser exibida como disponiv
 Se não tiver nenhuma poltrona, o aplicativo deve exibir:
 O próximo voo parte em 3 horas.
 */
-public class voo {
+public class Voo {
     private final Scanner input = new Scanner(System.in);
-    private boolean[] assentos;
+    private final ArrayList<Assento> assentos;
     private final String nome;
-    public voo(String nome){
-        assentos = new boolean[11];
+    
+    public Voo(String nome){
+        this.assentos = new ArrayList(10);
+        
+        for(int i = 0; i < 10; i++){
+            if(i <= 4){
+                assentos.add(new Assento(Assento.classe.PRIMEIRA));
+                
+            }else if(i >= 5){
+                assentos.add(new Assento(Assento.classe.ECONOMICA));
+            }
+        }
         this.nome = nome;
     }
-    public void inputAssento(){
-        System.out.println("Bem vindo ao aeroporto!");
-        
-        System.out.println("1 - Primeira classe%n2 - Classe ecônomica%n");
-        System.out.print("Digite 1 ou 2 para reservar o assento:");
-        
+    
+    public void showIntro(){
+        int classe;
+        while(isDisponivel()){
+            System.out.println("Bem vindo ao aeroporto!");
+            System.out.println("Voo:" + nome);
+            System.out.print("Digite a classe desejada: ");
+            classe = input.nextInt(); 
+            reserva(classe);
+        }
     }
-    private void showLugares(){
-       System.out.println(nome);
-       for(int i = 1;i < assentos.length;i++){
-           if(i <= 5 && assentos[i] == false){
-               System.out.println("Assentos da primeira classe disponíveis: ");
-               System.out.println(i);
-           }else if(i >= 6){
-               System.out.println("Assentos da classe ecônomica disponíveis: ");
-               System.out.println(i);
-           }
-           
-       }
+    public boolean isDisponivel(){
+        for(Assento assento : assentos){
+            return assento.isDisponibilidade();
+        }
+        return false;
+    }
+        
+    private void reserva(int classe){
+        int nReserva = 0;
+        if(classe == 1){
+            for(int i = 0;i < 5; i++){
+                if(assentos.get(i).isDisponibilidade()){
+                    assentos.get(i).setDisponibilidade(false);
+                    nReserva = i;
+                    System.out.printf("Reserva feita com sucesso%n"
+                            + "Seu cartão de embarque:%n"
+                            + "Número de reserva:%d%n"
+                            + "Tipo: Primeira classe%n%n",nReserva+1);
+                }else{
+                    System.out.println("Não há lugares disponíveis");
+                }
+                break;
+            }
+        }else if(classe == 2){
+            for(int i = 5;i < 10; i++){
+                if(assentos.get(i).isDisponibilidade()){
+                    assentos.get(i).setDisponibilidade(false);
+                    nReserva = i;
+                    System.out.printf("Reserva feita com sucesso%n"
+                            + "Seu cartão de embarque:%n"
+                            + "Número de reserva:%d%n"
+                            + "Tipo: Classe ecônomica%n%n",nReserva+1);
+                }else{
+                    System.out.println("Não há lugares disponíveis");
+                }
+                break;
+            }
+            
+        }
     } 
 }
