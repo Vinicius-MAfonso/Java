@@ -4,7 +4,7 @@ public class Assento {
     public enum classe{
         PRIMEIRA, ECONOMICA
     }
-    private classe tipoClasse; 
+    private final classe tipoClasse; 
     private boolean disponibilidade;
     
     public Assento(classe tipoClasse){
@@ -14,10 +14,6 @@ public class Assento {
 
     public classe getTipoClasse() {
         return tipoClasse;
-    }
-
-    public void setTipoClasse(classe tipoClasse) {
-        this.tipoClasse = tipoClasse;
     }
 
     public boolean isDisponibilidade() {
