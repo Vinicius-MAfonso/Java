@@ -1,12 +1,11 @@
 package pkg7.pkg20;
-import java.util.Arrays;
-import java.util.Scanner;
 
+import java.util.Scanner;
 
 public class Main {
 private static final Scanner input = new Scanner(System.in);
-private static final int TAM_LINHA = 5;
-private static final int TAM_COLUNA = 4;
+private static final int TAM_LINHA = 6;
+private static final int TAM_COLUNA = 5;
     public static void main(String[] args) {
         int sales[][] = new int[TAM_LINHA][TAM_COLUNA];
         int nVendedor;
@@ -55,7 +54,7 @@ private static final int TAM_COLUNA = 4;
         
         for(int linha = 0;linha < TAM_LINHA;linha++){
             if(linha == TAM_LINHA-1){
-                System.out.print("Lucro vendedor");
+                System.out.printf("Lucro%nvendedor");
             }else{
                 System.out.printf("%s %d ","Produto",linha+1);
             }
