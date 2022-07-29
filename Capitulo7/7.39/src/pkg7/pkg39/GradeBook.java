@@ -1,13 +1,21 @@
 package pkg7.pkg39;
+import java.util.Scanner;
 
 public class GradeBook {
     private String courseName; //Nome do curso
     private final int[][] grades; //array bidimensional das notas dos alunos
+    private final static Scanner input = new Scanner(System.in);
     
     
     public GradeBook(String courseName, int alunos,int exames){
         this.courseName = courseName;
         this.grades = new int[alunos][exames];
+        
+        for(int[] aluno : grades){
+            for(int i = 0;i < aluno.length;i++){
+                aluno[i] = -1;
+            }
+        }
     }
     
     //Retorna os nomes do curso
@@ -17,6 +25,20 @@ public class GradeBook {
     //Configura o nome do curso
     public void setCourseName(String courseName) {
         this.courseName = courseName;
+    }
+    public void setGrade(int nAluno, int nota){
+        System.out.print("Insira a nota: ");
+        grades[nAluno][nota] = input.nextInt();
+    }
+    public boolean isAvailable(){
+        for(int[] aluno : grades){
+            for(int nota : aluno){
+                if(nota == -1){
+                    return true;
+                }
+            }
+        }
+        return false;
     }
     //Realiza operações nos dados
     public void processGrades(){
@@ -67,7 +89,7 @@ public class GradeBook {
         for(int[] studentGrades : grades){
             for(int grade : studentGrades){
                 try{
-                    ++frequency[grade/10];
+                    ++frequency[grade];
                 }catch(ArrayIndexOutOfBoundsException e){
                     System.out.println(e);
                     System.out.println("Nota errada: "+ grade);
