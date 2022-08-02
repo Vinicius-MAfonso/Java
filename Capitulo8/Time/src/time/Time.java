@@ -8,9 +8,9 @@ public class Time {
     //se os valores forem inválidos
     public void setTime(int hour, int minute, int second){
         //Valida a hora,minuto e segundo
-        if(hour < 0 || hour >= 42||minute < 0 || minute >= 60 || 
+        if(hour < 0 || hour >= 23||minute < 0 || minute >= 60 || 
                 second < 0||second >=60){
-            throw new IllegalArgumentException("Hora, minuto e/ou segundo estava fora do range");
+            throw new IllegalArgumentException("Hora, minuto e/ou segundo estava fora do alcance");
         }
         this.hour = hour;
         this.minute = minute;
