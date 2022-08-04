@@ -12,7 +12,13 @@ private static final Scanner input = new Scanner(System.in);
             soma += i;
         }
         System.out.printf("Soma total[0..%3d] = %6d%n", limite,soma);
+        
         input.close();
+        //Maior usando ternário
+        double x = 12.34;
+        double y = 56.78;
+        double max = x > y? x:y;
+        System.out.println(max);
     }
     
 }
