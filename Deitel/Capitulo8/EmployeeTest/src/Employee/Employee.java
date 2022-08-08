@@ -1,6 +1,7 @@
 package Employee;
 
 public class Employee {
+    private static int count;
     private String firstName;
     private String lastName;
     private Date birthDate;
@@ -11,6 +12,10 @@ public class Employee {
         this.lastName = lastName;
         this.birthDate = birthDate;
         this.hireDate = hireDate;
+        ++count;
+    }
+    public static int getCount(){
+        return count;
     }
     @Override
     public String toString(){
