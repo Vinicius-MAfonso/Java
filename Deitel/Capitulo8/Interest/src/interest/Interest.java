@@ -12,7 +12,7 @@ public class Interest {
             BigDecimal amount = 
                     principal.multiply(rate.add(BigDecimal.ONE).pow(year));
             System.out.printf
-        ("%4d$20s%n",year,NumberFormat.getCurrencyInstance().format(amount));
+        ("%4d%20s%n",year,NumberFormat.getCurrencyInstance().format(amount));
         }
         
     }
