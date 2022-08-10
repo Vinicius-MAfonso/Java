@@ -4,7 +4,7 @@ public class Date {
     private int month;//1-12
     private int day;//1-31
     private int year;//qualquer
-    private final int DAYSPERMONTH;
+    private int DAYSPERMONTH;
     public Date(int month,int day, int year){
         this.DAYSPERMONTH = switch(month){
             case 1,3,5,7,8,10,12 ->{
@@ -26,6 +26,15 @@ public class Date {
         this.month = month;
         this.year = year;
         System.out.printf("Date object constructor for date %s%n",this);        
+    }
+    
+    public void nextDay(){
+        if(DAYSPERMONTH < day++){
+            day = 1;
+            month++;
+        }else{
+            day++;
+        }
     }
     @Override
     public String toString(){
