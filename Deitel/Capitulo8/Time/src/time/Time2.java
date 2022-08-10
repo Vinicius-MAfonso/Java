@@ -49,6 +49,10 @@ public class Time2 {
         this.setMinute(minute);
         this.setSecond(second);
     }
+    public void incrementHour(){
+        hour++;
+        autoIncrement();
+    }
 
     public int getHour() {
         return hour;
@@ -60,7 +64,10 @@ public class Time2 {
         }
         this.hour = hour;
     }
-
+    public void incrementMinute(){
+        minute++;
+        autoIncrement();
+    }
     public int getMinute() {
         return minute;
     }
@@ -71,16 +78,34 @@ public class Time2 {
         }
         this.minute = minute;
     }
-
+    
+    public void tick(){
+        second++;
+        autoIncrement();
+    }
+    
     public int getSecond() {
         return second;
     }
-
+    
     public void setSecond(int second) {
         if(second < 0 || second >= 60){
             throw new IllegalArgumentException();
         }
         this.second = second;
+    }
+    private void autoIncrement(){
+        if(second == 60){
+            second = 0;
+            minute++;
+        }
+        if(minute == 60){
+            minute = 0;
+            hour++;
+        }
+        if(hour == 12){
+            hour = 0;
+        }
     }
     public String toUniversalString(){
         return String.format("%02d:%02d:%02d",getHour(),getMinute(),getSecond());
@@ -88,7 +113,6 @@ public class Time2 {
     @Override
     public String toString(){
         return String.format("%d:%02d:%02d %s",
-        ((getHour() == 0 || getHour() == 12) ? 12 : getHour() % 12),
-        getMinute(), getSecond(), (getHour() < 12 ? "AM" : "PM"));
+        getHour(),getMinute(), getSecond(), (getHour() < 12 ? "AM" : "PM"));
     }
 }
