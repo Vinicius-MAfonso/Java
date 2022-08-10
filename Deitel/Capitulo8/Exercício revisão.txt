@@ -1,0 +1,20 @@
+a)Importação sob demanda
+b)format
+c)sombreia
+d)Serviços public, interface public
+e)Importação de tipo único
+f)Construtor padrão
+g)toString
+h)métodos acessores, métodos de consulta
+i)predicado
+j)values
+k)tem um
+l)enum
+m)static
+n)import static única
+o)princípio do menor privilégio
+p)final
+q)import static sob demanda
+r)métodos modificadores
+s)BigDecimal
+t)throw

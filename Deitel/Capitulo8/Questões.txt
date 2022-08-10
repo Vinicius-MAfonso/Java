@@ -1,0 +1,2 @@
+8.2 - Pois as classes terão livre acesso aos membros delas mesmas, sendo ruim para um 
+sistema seguro
