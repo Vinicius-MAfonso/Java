@@ -11,6 +11,7 @@ public class DateAndTime {
         dateAndTime.time.incrementHour();
         if(dateAndTime.time.getHour() >= 24){
             dateAndTime.date.nextDay();
+            dateAndTime.time.setHour(0);
         }
     }
     @Override

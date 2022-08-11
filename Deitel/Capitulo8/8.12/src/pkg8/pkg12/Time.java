@@ -99,12 +99,12 @@ public class Time {
             second = 60 - second;
             minute++;
         }
-        if(minute == 60){
+        if(minute >= 60){
             minute = 60 - minute;
             hour++;
         }
-        if(hour == 12){
-            hour = 0;
+        if(hour >= 12){
+            hour = Math.abs(12 - hour);
         }
     }
     public String toUniversalString(){

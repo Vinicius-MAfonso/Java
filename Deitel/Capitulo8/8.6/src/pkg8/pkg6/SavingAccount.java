@@ -1,4 +1,7 @@
 package pkg8.pkg6;
+
+import java.math.BigDecimal;
+
 /*
 para indicar a quantidade que o poupador atualmente tem em depósito. 
 Forneça o método calculateMonthlyInterest para calcular
@@ -15,10 +18,32 @@ Em seguida, configure annualInterestRate para 5%, calcule a
 taxa do próximo mês e imprima os novos saldos para os dois poupadores.
 */
 public class SavingAccount {
-    private double savingsBalance;
+    private double savingsBalance; //Quantidade que cada poupador tem em depósito
     private static double annualInterestRate; //Armazena a taxa de juros anual
     
+    public SavingAccount(double savingsBalance){
+        if(savingsBalance < 0){
+            throw new IllegalArgumentException("Só é permitido valores poisitivos!");
+        }
+        this.savingsBalance = savingsBalance;
+    }
     public double calculateMonthlyInterest(){//Indica a quantidade que o polpador tem em depósito
-        return savingsBalance = (savingsBalance*annualInterestRate)/12;
+        return (getSavingsBalance()*getAnnualInterestRate())/12;
+    }
+
+    public static double getAnnualInterestRate() {
+        return annualInterestRate;
+    }
+
+    public static void setAnnualInterestRate(double aAnnualInterestRate) {
+        annualInterestRate = aAnnualInterestRate/100;
+    }
+
+    public double getSavingsBalance() {
+        return savingsBalance;
+    }
+
+    public void setSavingsBalance(double savingsBalance) {
+        this.savingsBalance = savingsBalance;
     }
 }
