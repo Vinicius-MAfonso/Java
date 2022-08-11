@@ -1,4 +1,4 @@
-package Employee;
+package pkg8.pkg12;
 
 public class Date {
     private int month;//1-12
@@ -15,8 +15,7 @@ public class Date {
             throw new IllegalArgumentException(String.format("Day must be in range 1 - %d", daysPerMonth));
         }
         this.day = day;
-        this.year = year;
-        System.out.printf("Date object constructor for date %s%n",this.toString());        
+        this.year = year;      
     }
     
     public void nextDay(){

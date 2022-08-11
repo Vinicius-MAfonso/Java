@@ -1,5 +1,9 @@
 package saticimporttest;
-import static java.lang.Math.*;
+import static java.lang.Math.sqrt;
+import static java.lang.Math.ceil;
+import static java.lang.Math.E;
+import static java.lang.Math.PI;
+
 public class SaticImportTest {
 
     public static void main(String[] args) {
