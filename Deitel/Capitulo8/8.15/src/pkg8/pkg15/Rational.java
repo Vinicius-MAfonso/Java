@@ -23,27 +23,34 @@ public class Rational {
             denominator = -denominator;
             numerator = -numerator; 
         }
+        
         this.numerator = numerator;
         this.denominator = denominator;
         this.result = numerator/denominator;
+        
     }
     
     public static int greatestCommonDivisor(int a, int b){
-        if(b == 0){
-            return a;
+        int gcd = 1;
+        for (int i = 1; i <= a && i <= b; i++) {
+            if (a % i == 0 && b % i == 0) {
+                gcd = i;
+            }
         }
-        else{
-            return greatestCommonDivisor(b, a % b);
-        }
+        return gcd;
     }
     
-    
     public static Rational sum(Rational n1, Rational n2){
-        int nume;
         int deno;
-        nume = n1.getNumerator();//Terminar o algoritmo para descobrir o numerador
-        
         int mmc = Rational.greatestCommonDivisor(n1.getDenominator(),n2.getDenominator());
+        System.out.println(mmc);
+        int numeN1 = mmc/n1.getDenominator()*n1.getNumerator();
+        
+        int numeN2 = (mmc/n2.getDenominator())*n2.getNumerator();
+       
+        
+        int nume = numeN1 + numeN2;
+        
         deno = mmc;
         Rational result = new Rational(nume, deno);
         return result;

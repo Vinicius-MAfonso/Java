@@ -5,6 +5,7 @@ public class Main {
     public static void main(String[] args) {
         Rational n1 = new Rational(1, 2);
         Rational n2 = new Rational(3, 9);
+        
         System.out.println("Operações:");
          System.out.println("");
         System.out.println("Multiplicação");
