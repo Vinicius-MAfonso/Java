@@ -1,7 +1,6 @@
 package capitulo3;
 import java.util.Scanner; //Importa o Scanner
 
-
 public class AccountTest {
     public static void displayAccount(Account accountToDisplay){
        System.out.printf("A conta %s tem R$ %.2f%n",accountToDisplay.getName(), accountToDisplay.getSaldo());
