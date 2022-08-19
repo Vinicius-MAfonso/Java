@@ -38,6 +38,13 @@ public class LocadoraProject {
                 }   
                 
                 Veiculo veiculoSelecionado = veiculos.get(opcaoVeiculo);
+                if(veiculoSelecionado.isAlugado()){
+                    System.out.println("Carro alugado!, voltando ao menu");
+                    sleep(3);
+                    limparTela();
+                    menu();
+                    break;
+                }
                 System.out.print("Digite seu nome: ");
                 String nome = input.next();
                 
@@ -72,16 +79,16 @@ public class LocadoraProject {
                 
                 System.out.println("Cadastro de veículo");
                 System.out.print("Digite o tipo de veiculo: ");
-                String tipoVeiculo = input.next();
+                String tipoVeiculo = input.next().toUpperCase();
                 
                 System.out.print("Digite a marca do veículo: ");
-                String marca = input.next();
+                String marca = input.next().toUpperCase();
                 
                 System.out.print("Digite o modelo do veículo: ");
-                String modelo = input.next();
+                String modelo = input.next().toUpperCase();
                 
                 System.out.print("Digite o emplacamento do veículo: ");
-                String emplacamento = input.next();
+                String emplacamento = input.next().toUpperCase();
                 
                 System.out.print("Digite o valor padrão do carro:R$ ");
                 double valorVeiculo = input.nextDouble();
