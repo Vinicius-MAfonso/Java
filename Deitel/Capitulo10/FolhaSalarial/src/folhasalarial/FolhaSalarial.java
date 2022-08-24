@@ -28,19 +28,21 @@ public class FolhaSalarial {
                 "Ganhos", basePlusComissionEmployee.earnings());
         //Vetor que guarda todos os empregados instanciados
         Employee[] employees = new Employee[4];
-        
+        //Coloca um empregado em cada posição do vetor empregados
         employees[0] = salariedEmployee;
         employees[1] = hourlyEmployee;
         employees[2] = comissionEmployee;
         employees[3] = basePlusComissionEmployee;
         System.out.printf("Empregados processados polimorficamente:%n%n");
+        //Roda todos os empregados do vetor
         for(Employee currentEmployee : employees){
-            
+            //Retorna a representação String do empregado da posição do vetor
             System.out.println(currentEmployee);
             
-            if(currentEmployee instanceof BasePlusComissionEmployee){
-                BasePlusComissionEmployee employee = 
-                        (BasePlusComissionEmployee) currentEmployee;
+            //Se o empregado for da classe BasePlusComissionEmployee, 
+            //primeiro cria uma referência do objeto, e esse empregado recebe 10%
+            //de aumento
+            if(currentEmployee instanceof BasePlusComissionEmployee employee){//DownCast
                 employee.setBaseSalary(1.10 * employee.getBaseSalary());
                 
                 System.out.printf("Nova base salarial com 10%% de aumento é: R$%,.2f%n",

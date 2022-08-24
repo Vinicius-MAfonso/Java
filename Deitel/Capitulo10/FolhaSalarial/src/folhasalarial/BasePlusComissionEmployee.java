@@ -23,5 +23,13 @@ public class BasePlusComissionEmployee extends ComissionEmployee{
             throw new IllegalArgumentException("Salário base deve ser maior que ou 0");
         this.baseSalary = baseSalary;
     }
-    
+    @Override
+    public double earnings(){
+        return super.earnings() + getBaseSalary();
+    }
+    @Override
+    public String toString(){
+        return String.format(super.toString() + "%nSalário base: R$%,.2f", getBaseSalary());
+        
+    }    
 }
