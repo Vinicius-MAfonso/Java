@@ -1,6 +1,6 @@
 package folhasalarial;
 
-public abstract class Employee extends Object{
+public abstract class Employee extends Object implements Payable{
     private final String firstName;
     private final String lastName;
     private final String socialSecurityNumber;
