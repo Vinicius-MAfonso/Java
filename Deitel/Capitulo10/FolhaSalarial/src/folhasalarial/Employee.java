@@ -1,12 +1,15 @@
 package folhasalarial;
 
-public abstract class Employee extends Object implements Payable{
+public abstract class Employee implements Payable{
+    
     private final String firstName;
     private final String lastName;
     private final String socialSecurityNumber;
+    
     //Construtor
     public Employee(String firstName, String lastName, 
-            String socialSecurityNumber){
+            String socialSecurityNumber)
+    {
         this.firstName = firstName;
         this.lastName = lastName;
         this.socialSecurityNumber = socialSecurityNumber;
@@ -28,5 +31,6 @@ public abstract class Employee extends Object implements Payable{
     public String toString(){
         return String.format("%s %s%nNúmero de segurança: %s", getFirstName(), getLastName(), getSocialSecurityNumber());
     }
-    public abstract double earnings();//Método abstrato, nenhuma implementação
+    //Não foi implementado o método getPaymentAmount,
+    //Assim a classe deve ser declarada abstrata
 }

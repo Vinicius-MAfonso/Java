@@ -27,9 +27,4 @@ public class SalariedEmployee extends Employee{
     public String toString(){
         return String.format(super.toString()+"%nSalário semanal:R$%.2f",getWeeklySalary());
     }
-
-    @Override
-    public double earnings() {
-       return getWeeklySalary();
-    }
 }

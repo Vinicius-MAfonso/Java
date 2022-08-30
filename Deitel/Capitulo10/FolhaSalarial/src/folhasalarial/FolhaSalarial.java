@@ -19,13 +19,13 @@ public class FolhaSalarial {
         System.out.println("Empregados processados individualmente: ");
         //Impressão dos dados de ganhos dos empregados
         System.out.printf("%n%s%n%s: R$%,.2f%n%n",salariedEmployee, 
-                "Ganhos", salariedEmployee.earnings());
+                "Ganhos", salariedEmployee.getPaymentAmount());
         System.out.printf("%s%n%s: R$%,.2f%n%n",hourlyEmployee, 
-                "Ganhos", hourlyEmployee.earnings());
+                "Ganhos", hourlyEmployee.getPaymentAmount());
         System.out.printf("%s%n%s: R$%,.2f%n%n",comissionEmployee, 
-                "Ganhos", comissionEmployee.earnings());
+                "Ganhos", comissionEmployee.getPaymentAmount());
         System.out.printf("%s%n%s: R$%,.2f%n%n",basePlusComissionEmployee, 
-                "Ganhos", basePlusComissionEmployee.earnings());
+                "Ganhos", basePlusComissionEmployee.getPaymentAmount());
         //Vetor que guarda todos os empregados instanciados
         Employee[] employees = new Employee[4];
         //Coloca um empregado em cada posição do vetor empregados
@@ -48,11 +48,23 @@ public class FolhaSalarial {
                 System.out.printf("Nova base salarial com 10%% de aumento é: R$%,.2f%n",
                         employee.getBaseSalary());
             }
-            System.out.printf("ganho $%,.2f%n%n", currentEmployee.earnings());
+            System.out.printf("Ganho $%,.2f%n%n", currentEmployee.getPaymentAmount());
         }
         for (int j = 0; j < employees.length; j++)
             System.out.printf("Empregado %d é um %s%n",
-                    j,employees[j].getClass().getName());         
+                    j,employees[j].getClass().getName());
+        //Teste Interface payable
+        Payable[] payableObjects = new Payable[4];
+        payableObjects[0] = new Invoice(01234, "Seat", 5, 375.00);
+        payableObjects[1] = new Invoice(01234, "Seat", 5, 375.00);
+        payableObjects[2] = new SalariedEmployee("John", "Travolta", "123456", 200.f);
+        payableObjects[3] = new SalariedEmployee("Suse", "Seat", "987654", 375.f);
+        System.out.println("Contas e empregados processados polimorficamente");
+        for(Payable currentPayable : payableObjects)
+        {
+            System.out.printf("%n%s %n%s: R$%,.2f%n",currentPayable.toString(),
+                    "Pagamento", currentPayable.getPaymentAmount());
+        }
     }
     
 }

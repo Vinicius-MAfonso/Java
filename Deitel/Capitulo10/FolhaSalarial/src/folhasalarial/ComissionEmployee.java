@@ -31,7 +31,7 @@ public class ComissionEmployee extends Employee{
         this.comissionRate = comissionRate;
     }
     @Override
-    public double earnings(){
+    public double getPaymentAmount(){
         return getGrossSales()*getComissionRate();
     }
     @Override

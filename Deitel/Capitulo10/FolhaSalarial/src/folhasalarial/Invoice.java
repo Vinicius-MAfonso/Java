@@ -7,8 +7,8 @@ public class Invoice implements Payable{
     private double pricePerItem;
     public Invoice(int partNumber, String partDescription, 
             int quantity, double pricePerItem){
-        if(quantity <= 0)
-            throw new IllegalArgumentException("Quantidade não pode ser menor ou igual a 0");
+        if(quantity < 0)
+            throw new IllegalArgumentException("Quantidade não pode ser menor que 0");
         if(pricePerItem <= 0.0){
             throw new IllegalArgumentException("Preço não pode ser menor ou igual a 0");
         }

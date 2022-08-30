@@ -34,7 +34,7 @@ public class HourlyEmployee extends Employee{
         this.hours = hours;
     }
     @Override
-    public double earnings(){
+    public double getPaymentAmount(){
         if(getHours() <= 40)
             return getHours()*getWage();
         else{
