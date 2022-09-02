@@ -1,11 +1,11 @@
 package folhasalarial;
 
 public class Invoice implements Payable{
-    private final int partNumber;
+    private final String partNumber;
     private final String partDescription;
     private int quantity;
     private double pricePerItem;
-    public Invoice(int partNumber, String partDescription, 
+    public Invoice(String partNumber, String partDescription, 
             int quantity, double pricePerItem){
         if(quantity < 0)
             throw new IllegalArgumentException("Quantidade não pode ser menor que 0");
@@ -18,7 +18,7 @@ public class Invoice implements Payable{
         this.pricePerItem = pricePerItem;
     }
 
-    public int getPartNumber() {
+    public String getPartNumber() {
         return partNumber;
     }
 

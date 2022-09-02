@@ -13,12 +13,16 @@ public class FolhaSalarial {
         BasePlusComissionEmployee basePlusComissionEmployee = 
                 new BasePlusComissionEmployee("Bob", "Lewis", "444-44-444", 5000, .04, 300, new Date(2, 2, 1990));
         
-        Employee[] employees = new Employee[4];
+        PieceWorker pieceWorker = 
+                new PieceWorker("Giorno", "Giovan", "555-55-555", 1.50, 2500, new Date(25, 6, 1995));
+        
+        Employee[] employees = new Employee[5];
         
         employees[0] = salariedEmployee;
         employees[1] = hourlyEmployee;
         employees[2] = comissionEmployee;
         employees[3] = basePlusComissionEmployee;
+        employees[4] = pieceWorker;
         
         System.out.printf("Empregados processados polimorficamente:%n%n");
         while(currentDate.getYear() <= 2023)
