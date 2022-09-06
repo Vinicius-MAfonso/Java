@@ -29,10 +29,15 @@ public abstract class Employee implements Payable{
     public Date getBirthDate() {
         return birthDate;
     }
+    public abstract double earnings();
     //Retorna a representação String do objeto
     @Override
     public String toString(){
         return String.format("%s %s%nNúmero de segurança: %s", getFirstName(), getLastName(), getSocialSecurityNumber());
+    }
+    @Override
+    public double getPaymentAmount(){
+        return earnings();
     }
     //Não foi implementado o método getPaymentAmount,
     //Assim a classe deve ser declarada abstrata

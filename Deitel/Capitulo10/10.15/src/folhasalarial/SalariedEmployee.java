@@ -20,7 +20,7 @@ public class SalariedEmployee extends Employee{
     }
     
     @Override
-    public double getPaymentAmount(){
+    public double earnings(){
         return getWeeklySalary();
     }
     @Override

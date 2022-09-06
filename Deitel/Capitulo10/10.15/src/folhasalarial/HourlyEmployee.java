@@ -11,7 +11,7 @@ public class HourlyEmployee extends Employee{
         setWage(wage);
        
     }
-
+    
     public double getWage() {
         return wage;
     }
@@ -34,7 +34,7 @@ public class HourlyEmployee extends Employee{
         this.hours = hours;
     }
     @Override
-    public double getPaymentAmount(){
+    public double earnings(){
         if(getHours() <= 40)
             return getHours()*getWage();
         else{

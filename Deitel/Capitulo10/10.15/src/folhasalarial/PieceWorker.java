@@ -26,7 +26,7 @@ public class PieceWorker extends Employee implements Payable{
         this.pieces = pieces;
     }
     @Override
-    public double getPaymentAmount() {
+    public double earnings() {
        return pieces * wage;
     }
 
