@@ -8,6 +8,7 @@ public class Main {
         TextFieldFrame textFieldFrame = new TextFieldFrame();
         textFieldFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         textFieldFrame.setVisible(true);
+        textFieldFrame.setLocationRelativeTo(null);
     }
     
 }
