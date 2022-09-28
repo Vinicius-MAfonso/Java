@@ -6,8 +6,7 @@ public class Pizza {
     }
     private boolean queijoExtra;
     private boolean molhoExtra;
-    private sabores sabor;
-    private double preco;
+    private final sabores sabor;
     public Pizza(boolean queijoExtra, boolean molhoExtra, sabores sabor){
         this.molhoExtra = molhoExtra;
         this.queijoExtra = queijoExtra;
@@ -30,16 +29,16 @@ public class Pizza {
     }
     public double getPreco() {
         double preco = 0;
-        if(sabor == sabores.MUSSARELA)
-            preco =+ 30;
-        else if(sabor == sabores.MARGUERITA)
-            preco =+ 30;
-        else if(sabor == sabores.CALABRESA)
-            preco =+ 40;
-        else if(sabor == sabores.BACON)
-            preco =+ 45;
-        else if(sabor == sabores.ESPECIAL)
-            preco =+ 50;
+        if(null != sabor)
+            switch (sabor) {
+            case MUSSARELA -> preco =+ 30;
+            case MARGUERITA -> preco =+ 30;
+            case CALABRESA -> preco =+ 40;
+            case BACON -> preco =+ 45;
+            case ESPECIAL -> preco =+ 50;
+            default -> {
+            }
+        }
         if(isMolhoExtra())
             preco += 5;
         if(isQueijoExtra())

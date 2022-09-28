@@ -3,7 +3,5 @@ Nome:
 Telefone: 
 Endereço: 
 Pedidos:
-[Pizza Mussarela + Queijo extra R$ 40
-00
- Pizza Marguerita + Molho extra R$ 35
+[Pizza Bacon R$ 45
 00]

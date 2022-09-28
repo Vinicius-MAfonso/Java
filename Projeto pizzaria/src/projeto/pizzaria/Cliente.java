@@ -16,10 +16,13 @@ public class Cliente {
         this.telefone = telefone;
     }
     public void gerarRelatorio(String relatorio) throws IOException {
-        try( FileWriter arquivo = new FileWriter(new File(String.format("relatorios\\cliente_%s.txt", getNome())));){
-            arquivo.write(String.format("---Relatório---%n"));
-            arquivo.write(String.format("Nome: %s%nTelefone: %s%nEndereço: %s%n", getNome(), getTelefone(), getEndereco()));
-            arquivo.write(String.format("Pedidos:%n"));
+        StringBuilder stringBuilder = new StringBuilder();
+        try(FileWriter arquivo = new FileWriter(new File(String.format("relatorios\\cliente_%s.txt", getNome())))){
+            stringBuilder.append("---Relatório---\n");
+            stringBuilder.append(String.format("Nome: %s%nTelefone: %s%nEndereço: %s%n", getNome(), getTelefone(), getEndereco()));
+            stringBuilder.append("Pedidos:\n");
+            
+            arquivo.write(stringBuilder.toString());
             String[] pedidos = relatorio.split(",");
             for(String pedido : pedidos)
                 arquivo.write(String.format("%s%n", pedido));
