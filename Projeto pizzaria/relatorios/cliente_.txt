@@ -1,7 +1,0 @@
----Relatório---
-Nome: 
-Telefone: 
-Endereço: 
-Pedidos:
-[Pizza Bacon R$ 45
-00]

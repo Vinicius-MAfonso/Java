@@ -116,7 +116,7 @@ public class Pizza {
                         return  String.format("%s R$ %.2f",
                                 "Pizza especial da casa + Molho extra",getPreco());
                 }else
-                    return String.format("%s R$ .2f","especial da casa",getPreco());
+                    return String.format("%s R$ %.2f","Pizza especial da casa",getPreco());
             }
         }
         return null;

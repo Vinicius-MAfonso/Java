@@ -3,6 +3,7 @@ package projeto.pizzaria;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Arrays;
 
 public class Cliente {
     private final int nPedido;
@@ -23,7 +24,8 @@ public class Cliente {
             stringBuilder.append("Pedidos:\n");
             
             arquivo.write(stringBuilder.toString());
-            String[] pedidos = relatorio.split(",");
+            String[] pedidos = relatorio.split(",\\d*");
+            System.out.println(Arrays.toString(pedidos));
             for(String pedido : pedidos)
                 arquivo.write(String.format("%s%n", pedido));
         }catch(Exception e){
