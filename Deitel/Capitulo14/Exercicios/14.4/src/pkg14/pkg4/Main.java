@@ -16,7 +16,9 @@ public class Main {
         String s1 = input.nextLine();
         System.out.print("Digite a segunda String: ");
         String s2 = input.nextLine();
-        int nComparacao = 4;
+        if(s1.regionMatches(true,0, s2, 0, 4))
+            System.out.println("A região 1 a 5 da String s1 é igual s2");
+       
     }
     
 }
