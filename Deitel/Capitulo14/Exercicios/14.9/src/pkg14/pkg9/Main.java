@@ -10,17 +10,21 @@ public class Main {
 private static final Scanner input = new Scanner(System.in);
     public static void main(String[] args) {
         System.out.print("Digite uma String:");
-        String phrase = input.next();
+        String phrase = input.nextLine();
+        System.out.printf("String: %s%n",phrase);
         String[] array = phrase.split(" ");
-        String[] arrayAux = array.clone();
-        
-        for(int i = array.length-1;i >= 0;i--){
-            for(int j = 0; j < array.length; j++) {
-                array[j] = arrayAux[i]; 
-            }
-        }
-        
+        String[] arrayInver = new String[array.length];
+        System.out.println("Array original:");
         for(String currentIndex : array){
+            System.out.println(currentIndex);
+        }
+        int j = 0;
+        for(int i = array.length-1;i >= 0;i--){
+            arrayInver[j] = array[i];
+            j++;
+        }
+        System.out.println("Array inverso:");
+        for(String currentIndex : arrayInver){
             System.out.println(currentIndex);
         }
     }
