@@ -1,7 +1,6 @@
 package projeto.pizzaria;
 
-import java.io.File;
-import java.io.FileWriter;
+import java.util.Formatter;
 import java.io.IOException;
 import java.util.Arrays;
 
@@ -16,19 +15,18 @@ public class Cliente {
         this.nPedido = nPedido;
         this.telefone = telefone;
     }
-    public void gerarRelatorio(String relatorio) throws IOException {
-        StringBuilder stringBuilder = new StringBuilder();
-        try(FileWriter arquivo = new FileWriter(new File(String.format("relatorios\\cliente_%s.txt", getNome())))){
-            stringBuilder.append("---Relatório---\n");
-            stringBuilder.append(String.format("Nome: %s%nTelefone: %s%nEndereço: %s%n", getNome(), getTelefone(), getEndereco()));
-            stringBuilder.append("Pedidos:\n");
-            
-            arquivo.write(stringBuilder.toString());
+    public void gerarRelatorio(String relatorio){
+        StringBuilder builder = new StringBuilder();
+        try(Formatter arquivo = new Formatter(String.format("relatorios\\cliente_%s.txt", getNome()))){
+            arquivo.format("---Relatório---\n");
+            arquivo.format(String.format("Nome: %s%nTelefone: %s%nEndereço: %s%n", getNome(), getTelefone(), getEndereco()));
+            arquivo.format("Pedidos:\n");
             String[] pedidos = relatorio.split(",\\d*");
             System.out.println(Arrays.toString(pedidos));
-            for(String pedido : pedidos)
-                arquivo.write(String.format("%s%n", pedido));
-        }catch(Exception e){
+            for(String pedido : pedidos){
+                arquivo.format("%s%n", pedido);
+            }
+        }catch(IOException e){
             System.err.println(e);
         }
     }

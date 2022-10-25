@@ -1,9 +1,6 @@
 package projeto.pizzaria;
 import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.DefaultListModel;
-import javax.swing.JList;
 import projeto.pizzaria.Pizza.sabores;
 import javax.swing.JOptionPane;
 
@@ -263,12 +260,8 @@ public class CalculatorFrame extends javax.swing.JFrame {
         (null, "Confirmar pedido?", "Finalizar pedido", JOptionPane.YES_NO_OPTION);
         System.out.println(confirmarPedido);
         if(confirmarPedido == 0){
-            try {
-                System.out.println("Gerando relatório...");
-                cliente.gerarRelatorio(modelo.toString());
-            } catch (IOException ex) {
-                ex.getStackTrace();
-            }
+            System.out.println("Gerando relatório...");
+            cliente.gerarRelatorio(modelo.toString());
             pedidos++;
             nPedidoTextField.setText(Integer.toString(pedidos));
             modelo.clear();
