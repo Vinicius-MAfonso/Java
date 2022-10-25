@@ -1,5 +1,4 @@
 package projeto.pizzaria;
-import java.io.IOException;
 import javax.swing.DefaultListModel;
 import projeto.pizzaria.Pizza.sabores;
 import javax.swing.JOptionPane;
