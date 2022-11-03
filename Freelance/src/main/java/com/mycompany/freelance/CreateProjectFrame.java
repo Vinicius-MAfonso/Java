@@ -1,9 +1,8 @@
 package com.mycompany.freelance;
-
 import java.awt.Component;
+import javax.swing.JOptionPane;
 
 public class CreateProjectFrame extends javax.swing.JFrame {
-
     public CreateProjectFrame(Component c) {
         initComponents();
         setVisible(true);
@@ -39,7 +38,7 @@ public class CreateProjectFrame extends javax.swing.JFrame {
         jPanel1.setForeground(new java.awt.Color(0, 0, 0));
 
         nameLabel.setForeground(new java.awt.Color(255, 255, 255));
-        nameLabel.setText("Nome");
+        nameLabel.setText("Nome do projeto");
 
         descriptionLabel.setForeground(new java.awt.Color(255, 255, 255));
         descriptionLabel.setText("Descrição");
@@ -51,6 +50,8 @@ public class CreateProjectFrame extends javax.swing.JFrame {
         nameField.setColumns(30);
         nameField.setForeground(new java.awt.Color(255, 255, 255));
         nameField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(20, 20, 20)));
+        nameField.setCaretColor(new java.awt.Color(255, 255, 255));
+        nameField.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         nameField.setSelectedTextColor(new java.awt.Color(255, 255, 255));
         nameField.setSelectionColor(new java.awt.Color(6, 100, 211));
 
@@ -58,6 +59,8 @@ public class CreateProjectFrame extends javax.swing.JFrame {
         contractorField.setColumns(30);
         contractorField.setForeground(new java.awt.Color(255, 255, 255));
         contractorField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(20, 20, 20)));
+        contractorField.setCaretColor(new java.awt.Color(255, 255, 255));
+        contractorField.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         contractorField.setSelectedTextColor(new java.awt.Color(255, 255, 255));
         contractorField.setSelectionColor(new java.awt.Color(6, 100, 211));
 
@@ -68,7 +71,8 @@ public class CreateProjectFrame extends javax.swing.JFrame {
         descriptionTextArea.setRows(5);
         descriptionTextArea.setAutoscrolls(false);
         descriptionTextArea.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(20, 20, 20)));
-        descriptionTextArea.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        descriptionTextArea.setCaretColor(new java.awt.Color(255, 255, 255));
+        descriptionTextArea.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         descriptionTextArea.setSelectedTextColor(new java.awt.Color(255, 255, 255));
         descriptionTextArea.setSelectionColor(new java.awt.Color(6, 100, 211));
         jScrollPane1.setViewportView(descriptionTextArea);
@@ -80,7 +84,8 @@ public class CreateProjectFrame extends javax.swing.JFrame {
         valuePerHourField.setColumns(30);
         valuePerHourField.setForeground(new java.awt.Color(255, 255, 255));
         valuePerHourField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(20, 20, 20)));
-        valuePerHourField.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        valuePerHourField.setCaretColor(new java.awt.Color(255, 255, 255));
+        valuePerHourField.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         valuePerHourField.setSelectedTextColor(new java.awt.Color(255, 255, 255));
         valuePerHourField.setSelectionColor(new java.awt.Color(6, 100, 211));
 
@@ -155,30 +160,29 @@ public class CreateProjectFrame extends javax.swing.JFrame {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(cancelButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(createButton)
-                .addGap(17, 17, 17))
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1))
-                .addContainerGap(18, Short.MAX_VALUE))
+                .addGap(30, 30, 30)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(cancelButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(createButton))
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLabel1)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(9, 9, 9)
+                .addGap(15, 15, 15)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cancelButton)
-                    .addComponent(createButton))
+                    .addComponent(createButton)
+                    .addComponent(cancelButton))
                 .addContainerGap(15, Short.MAX_VALUE))
         );
 
@@ -201,7 +205,21 @@ public class CreateProjectFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_cancelButtonActionPerformed
 
     private void createButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createButtonActionPerformed
-        
+        boolean projectCreated = false;
+        try{
+            Project project = 
+                new Project(nameField.getText(),contractorField.getText(),
+                        Double.parseDouble(valuePerHourField.getText()),descriptionTextArea.getText());
+            projectCreated = true;
+        }catch(NumberFormatException nfe){
+            JOptionPane.showMessageDialog(this,
+                    "Digite um número de valor válido por favor!","Erro ao criar",JOptionPane.ERROR_MESSAGE);
+        }catch(IllegalArgumentException iae){
+            JOptionPane.showMessageDialog(this,
+                    iae.getMessage(),"Erro ao criar",JOptionPane.ERROR_MESSAGE);
+        }
+        if(projectCreated)
+            dispose();
     }//GEN-LAST:event_createButtonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

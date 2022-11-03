@@ -2,12 +2,12 @@ package com.mycompany.freelance;
 import javax.swing.DefaultListModel;
 
 public class MainFrame extends javax.swing.JFrame {
-DefaultListModel modelo = new DefaultListModel();
-    
+private DefaultListModel modelo = new DefaultListModel();
     public MainFrame() {
         initComponents();
         setVisible(true);
         setLocationRelativeTo(null);
+        
     }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -22,9 +22,6 @@ DefaultListModel modelo = new DefaultListModel();
         jScrollPane1 = new javax.swing.JScrollPane();
         projectList = new javax.swing.JList<>();
         jLabel2 = new javax.swing.JLabel();
-        jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("FreeLas");
@@ -37,6 +34,11 @@ DefaultListModel modelo = new DefaultListModel();
         deleteProjectButton.setForeground(new java.awt.Color(255, 255, 255));
         deleteProjectButton.setText("Excluir");
         deleteProjectButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        deleteProjectButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                deleteProjectButtonMouseClicked(evt);
+            }
+        });
 
         renameProjectButton.setBackground(new java.awt.Color(36, 41, 46));
         renameProjectButton.setForeground(new java.awt.Color(255, 255, 255));
@@ -69,7 +71,7 @@ DefaultListModel modelo = new DefaultListModel();
             public String getElementAt(int i) { return strings[i]; }
         });
         projectList.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        projectList.setToolTipText("");
+        projectList.setToolTipText("Selecione o projeto e pressione o botão para uma ação");
         projectList.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         projectList.setSelectionBackground(new java.awt.Color(3, 102, 214));
         projectList.setSelectionForeground(new java.awt.Color(255, 255, 255));
@@ -105,26 +107,18 @@ DefaultListModel modelo = new DefaultListModel();
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 442, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(openProjectButton)
                     .addComponent(createProjectButton)
                     .addComponent(renameProjectButton)
-                    .addComponent(deleteProjectButton))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(deleteProjectButton)
+                    .addComponent(openProjectButton))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
-
-        jMenu1.setText("File");
-        jMenuBar1.add(jMenu1);
-
-        jMenu2.setText("Edit");
-        jMenuBar1.add(jMenu2);
-
-        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -146,14 +140,15 @@ DefaultListModel modelo = new DefaultListModel();
         CreateProjectFrame cpf = new CreateProjectFrame(this);
     }//GEN-LAST:event_createProjectButtonActionPerformed
 
+    private void deleteProjectButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deleteProjectButtonMouseClicked
+        modelo.remove(projectList.getSelectedIndex());
+    }//GEN-LAST:event_deleteProjectButtonMouseClicked
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton createProjectButton;
     private javax.swing.JButton deleteProjectButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton openProjectButton;
