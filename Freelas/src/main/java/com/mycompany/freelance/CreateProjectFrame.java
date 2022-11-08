@@ -1,4 +1,5 @@
 package com.mycompany.freelance;
+import model.Project;
 import java.awt.Component;
 import javax.swing.JOptionPane;
 
@@ -207,9 +208,7 @@ public class CreateProjectFrame extends javax.swing.JFrame {
     private void createButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createButtonActionPerformed
         boolean projectCreated = false;
         try{
-            Project project = 
-                new Project(nameField.getText(),contractorField.getText(),
-                        Double.parseDouble(valuePerHourField.getText()),descriptionTextArea.getText());
+            Project project = new Project();
             projectCreated = true;
         }catch(NumberFormatException nfe){
             JOptionPane.showMessageDialog(this,
