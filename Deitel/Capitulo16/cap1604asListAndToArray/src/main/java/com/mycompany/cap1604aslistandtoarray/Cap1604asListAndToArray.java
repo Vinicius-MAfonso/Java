@@ -12,7 +12,7 @@ public class Cap1604asListAndToArray {
         links.add(3,"green");
         links.addFirst("cyan");
         
-        //Obtém elementos LinkedList como array
+        //Obtém elementos LinkedList como aray
         colors = links.toArray(new String[links.size()]);
         
         System.out.println("colors: ");
